@@ -23,10 +23,10 @@ const displayWeather = temp => {
     const div = document.createElement('div');
     div.classList.add('weather-status');
     div.innerHTML = `
-        <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="">
+        <img src="http://openweathermap.org/img/wn/${temp.weather[0].icon}@2x.png" alt="">
         <h1>${temp.name}</h1>
         <h3><span>${(temp.main.temp - 273.15).toFixed(2)}</span>&deg;C</h3>
-        <h1 class="lead">Clouds</h1>
+        <h1 class="lead">${temp.weather[0].main}</h1>
     `
     tempStatus.appendChild(div);
 }
